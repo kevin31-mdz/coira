@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agencia Coira — Tecnología · Marketing · Proyectos</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #3B6D11; --green-mid: #639922; --orange: #BA7517;
+    --bg: #111110; --bg2: #161614; --bg3: #1c1c1a;
+    --border: #272725; --text: #e8e4dc; --muted: #888780; --faint: #444440;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(17,17,16,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo svg { width: 28px; height: 28px; }
+  .nav-wordmark { font-size: 14px; font-weight: 600; letter-spacing: 4px; color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { color: var(--green-mid) !important; border: 1px solid var(--green); padding: 8px 16px; border-radius: 4px; transition: background 0.2s, color 0.2s !important; }
+  .nav-cta:hover { background: var(--green) !important; color: #fff !important; }
+
+  /* LANG SWITCHER */
+  .lang-switcher { display: flex; gap: 4px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 3px; }
+  .lang-btn { font-size: 10px; font-weight: 500; letter-spacing: 1px; color: var(--muted); background: none; border: none; cursor: pointer; padding: 4px 8px; border-radius: 4px; transition: all 0.15s; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .lang-btn.active { background: var(--green); color: #fff; }
+  .lang-btn:hover:not(.active) { color: var(--text); }
+
+  .hero { padding: 96px 48px 80px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .hero-tag { font-size: 10px; letter-spacing: 3px; color: var(--green-mid); text-transform: uppercase; margin-bottom: 24px; }
+  .hero-h1 { font-size: 52px; font-weight: 600; line-height: 1.1; color: var(--text); margin-bottom: 24px; }
+  .hero-h1 em { font-style: italic; color: var(--green-mid); font-weight: 300; }
+  .hero-sub { font-size: 15px; color: var(--muted); max-width: 440px; margin-bottom: 40px; line-height: 1.75; font-weight: 300; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; }
+  .btn-primary { background: var(--green); color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 14px 28px; border-radius: 4px; text-decoration: none; transition: background 0.2s; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .btn-primary:hover { background: var(--green-mid); }
+  .btn-secondary { font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 1px; transition: color 0.2s; }
+  .btn-secondary:hover { color: var(--text); }
+
+  .hero-metrics { display: flex; flex-direction: column; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; min-width: 200px; }
+  .metric { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .metric:last-child { border-bottom: none; }
+  .metric-num { font-size: 36px; font-weight: 600; color: var(--green-mid); line-height: 1; margin-bottom: 6px; }
+  .metric-label { font-size: 10px; letter-spacing: 2px; color: var(--faint); text-transform: uppercase; }
+
+  .services { padding: 80px 48px; border-bottom: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+  .section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 48px; }
+  .section-label { font-size: 10px; letter-spacing: 3px; color: var(--faint); text-transform: uppercase; }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border-radius: 8px; overflow: hidden; }
+  .service-card { background: var(--bg2); padding: 36px 32px; transition: background 0.2s; }
+  .service-card:hover { background: var(--bg3); }
+  .service-accent { width: 24px; height: 2px; border-radius: 2px; margin-bottom: 20px; }
+  .service-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
+  .service-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+  .service-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .service-items li { font-size: 12px; color: var(--faint); padding-left: 14px; position: relative; }
+  .service-items li::before { content: '·'; position: absolute; left: 0; color: var(--green-mid); }
+
+  .cases { padding: 80px 48px; border-bottom: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .case-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 32px; position: relative; overflow: hidden; }
+  .case-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--green); }
+  .case-tag { font-size: 10px; letter-spacing: 2px; color: var(--green-mid); text-transform: uppercase; margin-bottom: 16px; }
+  .case-title { font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .case-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+  .case-result { font-size: 11px; color: var(--orange); letter-spacing: 1px; }
+
+  .contact { padding: 80px 48px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-h2 { font-size: 40px; font-weight: 600; color: var(--text); line-height: 1.15; margin-bottom: 16px; }
+  .contact-h2 em { font-style: italic; color: var(--orange); font-weight: 300; }
+  .contact-sub { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+  .form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
+  .form-field label { font-size: 10px; letter-spacing: 2px; color: var(--faint); text-transform: uppercase; }
+  .form-field input, .form-field textarea {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 4px;
+    padding: 12px 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px;
+    color: var(--text); outline: none; transition: border-color 0.2s; resize: none;
+  }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--green); }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: var(--faint); }
+  .form-submit {
+    background: var(--green); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    padding: 14px 28px; border: none; border-radius: 4px; cursor: pointer;
+    transition: background 0.2s; align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--green-mid); }
+  .form-note { font-size: 11px; color: var(--faint); }
+  .form-feedback { display: none; padding: 14px 16px; border-radius: 4px; font-size: 13px; }
+  .form-feedback.success { display: block; background: rgba(59,109,17,0.15); border: 1px solid var(--green); color: var(--green-mid); }
+  .form-feedback.error { display: block; background: rgba(186,117,23,0.15); border: 1px solid var(--orange); color: var(--orange); }
+
+  footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-size: 11px; letter-spacing: 3px; color: var(--faint); }
+  .footer-copy { font-size: 11px; color: var(--faint); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 64px 24px 48px; gap: 40px; }
+    .hero-h1 { font-size: 36px; }
+    .services { padding: 60px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .cases { padding: 60px 24px; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
+    .contact-h2 { font-size: 30px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none">
+      <path d="M28,10 A14,14 0 1,0 28,30" stroke="#3B6D11" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="14" cy="20" r="3.5" fill="#3B6D11"/>
+      <line x1="14" y1="16.5" x2="14" y2="8" stroke="#639922" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2"/>
+      <line x1="14" y1="23.5" x2="14" y2="32" stroke="#BA7517" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2"/>
+    </svg>
+    <span class="nav-wordmark">COIRA</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#servicios" data-i18n="nav.services"></a></li>
+      <li><a href="#casos" data-i18n="nav.cases"></a></li>
+      <li><a href="#contacto" class="nav-cta" data-i18n="nav.contact"></a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <p class="hero-tag" data-i18n="hero.tag"></p>
+    <h1 class="hero-h1" data-i18n="hero.h1"></h1>
+    <p class="hero-sub" data-i18n="hero.sub"></p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary" data-i18n="hero.cta"></a>
+      <a href="#servicios" class="btn-secondary" data-i18n="hero.cta2"></a>
+    </div>
+  </div>
+  <div class="hero-metrics">
+    <div class="metric">
+      <div class="metric-num">3+</div>
+      <div class="metric-label" data-i18n="metrics.m1"></div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">100%</div>
+      <div class="metric-label" data-i18n="metrics.m2"></div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">LATAM</div>
+      <div class="metric-label" data-i18n="metrics.m3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="section-header">
+    <span class="section-label" data-i18n="nav.services"></span>
+    <div class="section-line"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-accent" style="background:#3B6D11"></div>
+      <h3 class="service-title" data-i18n="s1.title"></h3>
+      <p class="service-desc" data-i18n="s1.desc"></p>
+      <ul class="service-items">
+        <li data-i18n="s1.i1"></li><li data-i18n="s1.i2"></li>
+        <li data-i18n="s1.i3"></li><li data-i18n="s1.i4"></li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-accent" style="background:#BA7517"></div>
+      <h3 class="service-title" data-i18n="s2.title"></h3>
+      <p class="service-desc" data-i18n="s2.desc"></p>
+      <ul class="service-items">
+        <li data-i18n="s2.i1"></li><li data-i18n="s2.i2"></li>
+        <li data-i18n="s2.i3"></li><li data-i18n="s2.i4"></li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-accent" style="background:#639922"></div>
+      <h3 class="service-title" data-i18n="s3.title"></h3>
+      <p class="service-desc" data-i18n="s3.desc"></p>
+      <ul class="service-items">
+        <li data-i18n="s3.i1"></li><li data-i18n="s3.i2"></li>
+        <li data-i18n="s3.i3"></li><li data-i18n="s3.i4"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="casos">
+  <div class="section-header">
+    <span class="section-label" data-i18n="nav.cases"></span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card">
+      <p class="case-tag" data-i18n="c1.tag"></p>
+      <h3 class="case-title" data-i18n="c1.title"></h3>
+      <p class="case-desc" data-i18n="c1.desc"></p>
+      <p class="case-result" data-i18n="c1.result"></p>
+    </div>
+    <div class="case-card">
+      <p class="case-tag" data-i18n="c2.tag"></p>
+      <h3 class="case-title" data-i18n="c2.title"></h3>
+      <p class="case-desc" data-i18n="c2.desc"></p>
+      <p class="case-result" data-i18n="c2.result"></p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div>
+    <h2 class="contact-h2" data-i18n="contact.h2"></h2>
+    <p class="contact-sub" data-i18n="contact.sub"></p>
+  </div>
+  <form class="form" id="contactForm">
+    <div class="form-row">
+      <div class="form-field">
+        <label data-i18n="form.name"></label>
+        <input type="text" name="nombre" data-i18n-placeholder="form.name_ph" required>
+      </div>
+      <div class="form-field">
+        <label data-i18n="form.company"></label>
+        <input type="text" name="empresa" data-i18n-placeholder="form.company_ph">
+      </div>
+    </div>
+    <div class="form-field">
+      <label data-i18n="form.email"></label>
+      <input type="email" name="email" data-i18n-placeholder="form.email_ph" required>
+    </div>
+    <div class="form-field">
+      <label data-i18n="form.message"></label>
+      <textarea name="mensaje" rows="4" data-i18n-placeholder="form.message_ph" required></textarea>
+    </div>
+    <input type="text" name="_gotcha" style="display:none">
+    <div class="form-feedback" id="formFeedback"></div>
+    <button type="submit" class="form-submit" data-i18n="form.submit"></button>
+    <p class="form-note" data-i18n="form.note"></p>
+  </form>
+</section>
+
+<footer>
+  <span class="footer-logo">COIRA</span>
+  <span class="footer-copy" data-i18n="footer.copy"></span>
+</footer>
+
+<script>
+const i18n = {
+  es: {
+    "nav.services": "Servicios",
+    "nav.cases": "Casos",
+    "nav.contact": "Contacto",
+    "hero.tag": "Tecnología · Marketing · Proyectos",
+    "hero.h1": "Traés un problema.<br><em>Nosotros traemos</em><br>las soluciones.",
+    "hero.sub": "Calidad corporativa para tu empresa, sin la burocracia de las agencias grandes. Lo que prometemos, lo entregamos.",
+    "hero.cta": "Hablemos →",
+    "hero.cta2": "Ver servicios",
+    "metrics.m1": "Soluciones por problema",
+    "metrics.m2": "Cumplimiento de entregas",
+    "metrics.m3": "Cobertura regional",
+    "s1.title": "Presencia digital",
+    "s1.desc": "Que te encuentren antes que a tu competencia.",
+    "s1.i1": "Ficha de Google optimizada", "s1.i2": "Redes sociales activas",
+    "s1.i3": "Página web profesional", "s1.i4": "WhatsApp Business automatizado",
+    "s2.title": "Marketing digital",
+    "s2.desc": "Estrategia con ejecución y resultados medibles.",
+    "s2.i1": "Estrategia de contenidos", "s2.i2": "Publicidad en Meta y Google",
+    "s2.i3": "Email marketing", "s2.i4": "Análisis y reportes",
+    "s3.title": "Tecnología y proyectos",
+    "s3.desc": "La pata tecnológica que tu empresa necesita.",
+    "s3.i1": "Automatización con IA", "s3.i2": "Gestión de proyectos tech",
+    "s3.i3": "Integraciones y CRM", "s3.i4": "Consultoría tecnológica",
+    "c1.tag": "Taller mecánico · Mendoza",
+    "c1.title": "De invisible a referente local",
+    "c1.desc": "Sin presencia en Google, sin redes, sin web. En 60 días, ficha verificada, Instagram activo y WhatsApp automatizado respondiendo 24hs.",
+    "c1.result": "↑ 40 consultas nuevas en el primer mes",
+    "c2.tag": "Tu negocio · Próximo caso",
+    "c2.title": "El próximo caso puede ser el tuyo",
+    "c2.desc": "Cada negocio tiene un punto de partida distinto. Nos reunimos, analizamos y traemos un plan concreto — sin compromisos.",
+    "c2.result": "→ Pedí tu diagnóstico gratuito",
+    "contact.h2": "¿Listo para<br><em>crecer</em>?",
+    "contact.sub": "Contanos qué desafío tiene tu negocio. Sin rodeos, sin presentaciones infladas. Respondemos en menos de 24hs.",
+    "form.name": "Nombre", "form.name_ph": "Tu nombre",
+    "form.company": "Empresa", "form.company_ph": "Tu empresa",
+    "form.email": "Mail", "form.email_ph": "tu@mail.com",
+    "form.message": "¿En qué podemos ayudarte?", "form.message_ph": "Contanos brevemente tu desafío...",
+    "form.submit": "Enviar mensaje →",
+    "form.note": "Respondemos en menos de 24 horas hábiles.",
+    "form.success": "Mensaje enviado. Te respondemos en menos de 24 horas.",
+    "form.error": "Algo salió mal. Intentá de nuevo.",
+    "footer.copy": "© 2025 Agencia Coira · Tecnología · Marketing · Proyectos"
+  },
+  pt: {
+    "nav.services": "Serviços",
+    "nav.cases": "Casos",
+    "nav.contact": "Contato",
+    "hero.tag": "Tecnologia · Marketing · Projetos",
+    "hero.h1": "Você traz um problema.<br><em>Nós trazemos</em><br>as soluções.",
+    "hero.sub": "Qualidade corporativa para sua empresa, sem a burocracia das grandes agências. O que prometemos, entregamos.",
+    "hero.cta": "Vamos conversar →",
+    "hero.cta2": "Ver serviços",
+    "metrics.m1": "Soluções por problema",
+    "metrics.m2": "Cumprimento de entregas",
+    "metrics.m3": "Cobertura regional",
+    "s1.title": "Presença digital",
+    "s1.desc": "Seja encontrado antes da sua concorrência.",
+    "s1.i1": "Google Meu Negócio otimizado", "s1.i2": "Redes sociais ativas",
+    "s1.i3": "Site profissional", "s1.i4": "WhatsApp Business automatizado",
+    "s2.title": "Marketing digital",
+    "s2.desc": "Estratégia com execução e resultados mensuráveis.",
+    "s2.i1": "Estratégia de conteúdo", "s2.i2": "Publicidade no Meta e Google",
+    "s2.i3": "E-mail marketing", "s2.i4": "Análise e relatórios",
+    "s3.title": "Tecnologia e projetos",
+    "s3.desc": "O suporte tecnológico que sua empresa precisa.",
+    "s3.i1": "Automação com IA", "s3.i2": "Gestão de projetos tech",
+    "s3.i3": "Integrações e CRM", "s3.i4": "Consultoria tecnológica",
+    "c1.tag": "Oficina mecânica · Mendoza",
+    "c1.title": "De invisível a referência local",
+    "c1.desc": "Sem presença no Google, sem redes, sem site. Em 60 dias, ficha verificada, Instagram ativo e WhatsApp automatizado respondendo 24h.",
+    "c1.result": "↑ 40 novos contatos no primeiro mês",
+    "c2.tag": "Seu negócio · Próximo caso",
+    "c2.title": "O próximo caso pode ser o seu",
+    "c2.desc": "Cada negócio tem um ponto de partida diferente. Nos reunimos, analisamos e trazemos um plano concreto — sem compromisso.",
+    "c2.result": "→ Peça seu diagnóstico gratuito",
+    "contact.h2": "Pronto para<br><em>crescer</em>?",
+    "contact.sub": "Conte-nos o desafio do seu negócio. Sem rodeios, sem apresentações infladas. Respondemos em menos de 24h.",
+    "form.name": "Nome", "form.name_ph": "Seu nome",
+    "form.company": "Empresa", "form.company_ph": "Sua empresa",
+    "form.email": "E-mail", "form.email_ph": "seu@email.com",
+    "form.message": "Como podemos ajudar?", "form.message_ph": "Conte brevemente seu desafio...",
+    "form.submit": "Enviar mensagem →",
+    "form.note": "Respondemos em menos de 24 horas úteis.",
+    "form.success": "Mensagem enviada. Respondemos em menos de 24 horas.",
+    "form.error": "Algo deu errado. Tente novamente.",
+    "footer.copy": "© 2025 Agencia Coira · Tecnologia · Marketing · Projetos"
+  },
+  en: {
+    "nav.services": "Services",
+    "nav.cases": "Cases",
+    "nav.contact": "Contact",
+    "hero.tag": "Technology · Marketing · Projects",
+    "hero.h1": "You bring a problem.<br><em>We bring</em><br>the solutions.",
+    "hero.sub": "Corporate-grade quality for your business, without the big agency overhead. What we promise, we deliver.",
+    "hero.cta": "Let's talk →",
+    "hero.cta2": "See services",
+    "metrics.m1": "Solutions per problem",
+    "metrics.m2": "On-time delivery rate",
+    "metrics.m3": "Regional coverage",
+    "s1.title": "Digital presence",
+    "s1.desc": "Get found before your competition does.",
+    "s1.i1": "Optimized Google Business", "s1.i2": "Active social media",
+    "s1.i3": "Professional website", "s1.i4": "Automated WhatsApp Business",
+    "s2.title": "Digital marketing",
+    "s2.desc": "Strategy with execution and measurable results.",
+    "s2.i1": "Content strategy", "s2.i2": "Meta and Google Ads",
+    "s2.i3": "Email marketing", "s2.i4": "Analytics and reporting",
+    "s3.title": "Technology & projects",
+    "s3.desc": "The tech backbone your business needs.",
+    "s3.i1": "AI automation", "s3.i2": "Tech project management",
+    "s3.i3": "Integrations & CRM", "s3.i4": "Technology consulting",
+    "c1.tag": "Auto shop · Mendoza",
+    "c1.title": "From invisible to local reference",
+    "c1.desc": "No Google presence, no social, no website. In 60 days: verified listing, active Instagram and automated WhatsApp answering 24/7.",
+    "c1.result": "↑ 40 new inquiries in the first month",
+    "c2.tag": "Your business · Next case",
+    "c2.title": "The next case could be yours",
+    "c2.desc": "Every business has a different starting point. We meet, analyze, and bring a concrete plan — no commitment required.",
+    "c2.result": "→ Request your free diagnosis",
+    "contact.h2": "Ready to<br><em>grow</em>?",
+    "contact.sub": "Tell us your business challenge. No fluff, no inflated decks. We respond within 24 hours.",
+    "form.name": "Name", "form.name_ph": "Your name",
+    "form.company": "Company", "form.company_ph": "Your company",
+    "form.email": "Email", "form.email_ph": "you@email.com",
+    "form.message": "How can we help?", "form.message_ph": "Briefly describe your challenge...",
+    "form.submit": "Send message →",
+    "form.note": "We respond within 24 business hours.",
+    "form.success": "Message sent. We'll get back to you within 24 hours.",
+    "form.error": "Something went wrong. Please try again.",
+    "footer.copy": "© 2025 Agencia Coira · Technology · Marketing · Projects"
+  }
+};
+
+let currentLang = 'es';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (i18n[lang][key] !== undefined) el.placeholder = i18n[lang][key];
+  });
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+setLang('es');
+
+const form = document.getElementById('contactForm');
+const feedback = document.getElementById('formFeedback');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = '...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/xdawrwgq', {
+      method: 'POST', body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      feedback.textContent = i18n[currentLang]['form.success'];
+      feedback.className = 'form-feedback success';
+      form.reset();
+    } else { throw new Error(); }
+  } catch {
+    feedback.textContent = i18n[currentLang]['form.error'];
+    feedback.className = 'form-feedback error';
+  }
+  btn.innerHTML = i18n[currentLang]['form.submit'];
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
