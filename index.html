@@ -291,6 +291,10 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
 .cli-dark-bg{background:var(--accent)!important;border-color:transparent!important;}
 .cli-dark-bg .cliente-img-w img{filter:none!important;opacity:1!important;}
 .cliente-cname{font-size:9px;font-weight:600;color:var(--text3);text-align:center;line-height:1.3;}
+.cli-invert .cliente-img-w img{filter:invert(1) opacity(.6)!important;}
+.cli-invert:hover .cliente-img-w img{filter:invert(1) opacity(1)!important;}
+.clientes-otros{font-size:11px;color:var(--text3);margin-top:16px;}
+.clientes-otros strong{color:var(--text2);font-weight:600;}
 @media(max-width:900px){.sobre-layout{grid-template-columns:1fr;gap:32px;}
 .clientes-logos{grid-template-columns:repeat(4,1fr);}}
 @media(max-width:480px){.clientes-logos{grid-template-columns:repeat(3,1fr);}}
@@ -457,23 +461,12 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
       </div>
     </div>
     <div class="clientes-strip">
+
       <p class="clientes-strip-label">También trabajamos con</p>
       <div class="clientes-logos">
-        <div class="cliente-item cli-dark-bg">
+        <div class="cliente-item cli-invert">
           <div class="cliente-img-w"><img src="https://www.bael.com.ar/wp-content/uploads/2021/12/logo-footer.png" alt="Bael Iluminación" referrerpolicy="no-referrer"></div>
-          <span class="cliente-cname" style="color:rgba(255,255,255,.6)">Bael Iluminación</span>
-        </div>
-        <div class="cliente-item">
-          <div class="cliente-img-w"><div class="cli-initial cli-b">BU</div></div>
-          <span class="cliente-cname">Bunker Cervecería</span>
-        </div>
-        <div class="cliente-item">
-          <div class="cliente-img-w"><div class="cli-initial cli-g">CC</div></div>
-          <span class="cliente-cname">Cueva Celta Vinoteca</span>
-        </div>
-        <div class="cliente-item">
-          <div class="cliente-img-w"><div class="cli-initial cli-b">FA</div></div>
-          <span class="cliente-cname">FA Distribución</span>
+          <span class="cliente-cname">Bael Iluminación</span>
         </div>
         <div class="cliente-item">
           <div class="cliente-img-w"><img src="https://mundofw.com/wp-content/uploads/2025/03/yenjFVto.webp" alt="Mundo FW" referrerpolicy="no-referrer"></div>
@@ -495,9 +488,9 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
           <div class="cliente-img-w"><img src="https://longboatmarine.com/wp-content/uploads/2021/01/longboat-marine.png" alt="Longboat Marine" referrerpolicy="no-referrer"></div>
           <span class="cliente-cname">Longboat Marine</span>
         </div>
-        <div class="cliente-item cli-dark-bg">
+        <div class="cliente-item cli-invert">
           <div class="cliente-img-w"><img src="https://fdnmecanica.com.ar/wp-content/uploads/2016/10/Logo-FDN-blanco-300x95.png" alt="FDN Mecánica" referrerpolicy="no-referrer"></div>
-          <span class="cliente-cname" style="color:rgba(255,255,255,.6)">FDN Mecánica</span>
+          <span class="cliente-cname">FDN Mecánica</span>
         </div>
         <div class="cliente-item">
           <div class="cliente-img-w"><img src="https://acdn-us.mitiendanube.com/stores/002/054/802/themes/common/logo-400736805-1652731711-e42b8edce659f71172d2dd53611d46371652731711-640-0.webp" alt="Verde Agua" referrerpolicy="no-referrer"></div>
@@ -508,6 +501,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
           <span class="cliente-cname">Revmates</span>
         </div>
       </div>
+      <p class="clientes-otros">También: <strong>Bunker Cervecería</strong>, <strong>Cueva Celta Vinoteca</strong>, <strong>FA Distribución</strong></p>
     </div>
   </div>
 </section>
