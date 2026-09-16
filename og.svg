@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8f7f4"/>
+  <rect width="1200" height="6" fill="#3B6D11"/>
+  <circle cx="1060" cy="340" r="280" fill="#3B6D11" opacity="0.06"/>
+  <circle cx="1140" cy="160" r="160" fill="#BA7517" opacity="0.07"/>
+  <!-- Logo mark -->
+  <rect x="80" y="76" width="56" height="56" rx="14" fill="#3B6D11"/>
+  <text x="96" y="121" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="white">C</text>
+  <circle cx="124" cy="94" r="7" fill="#BA7517"/>
+  <circle cx="124" cy="94" r="3.5" fill="white"/>
+  <!-- Agency name -->
+  <text x="150" y="114" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#1a1a18">Agencia <tspan fill="#3B6D11">Coira</tspan></text>
+  <!-- Headline -->
+  <text x="80" y="250" font-family="Arial,sans-serif" font-size="56" font-weight="800" fill="#1a1a18" letter-spacing="-2">Marketing y tecnología</text>
+  <text x="80" y="324" font-family="Arial,sans-serif" font-size="56" font-weight="800" fill="#3B6D11" letter-spacing="-2">que realmente funcionan.</text>
+  <!-- Subtitle -->
+  <text x="80" y="400" font-family="Arial,sans-serif" font-size="22" fill="#5a5a52">Consultoría digital para agencias y empresas de América Latina.</text>
+  <!-- Tags -->
+  <rect x="80" y="448" width="148" height="36" rx="18" fill="#eef4e8"/>
+  <text x="154" y="471" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#3B6D11" text-anchor="middle">Meta Ads</text>
+  <rect x="240" y="448" width="160" height="36" rx="18" fill="#eef4e8"/>
+  <text x="320" y="471" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#3B6D11" text-anchor="middle">Google Ads</text>
+  <rect x="412" y="448" width="136" height="36" rx="18" fill="#eef4e8"/>
+  <text x="480" y="471" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#3B6D11" text-anchor="middle">Ecommerce</text>
+  <rect x="560" y="448" width="182" height="36" rx="18" fill="#eef4e8"/>
+  <text x="651" y="471" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#3B6D11" text-anchor="middle">Gestión de Proyectos</text>
+  <!-- URL -->
+  <text x="80" y="568" font-family="Arial,sans-serif" font-size="18" fill="#9a9a8e">agenciacoira.com</text>
+</svg>

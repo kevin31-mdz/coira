@@ -17,9 +17,14 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta property="og:site_name" content="Agencia Coira">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agencia Coira — Marketing Digital y Tecnología · LATAM">
 <meta name="twitter:description" content="Marketing digital, ecommerce y tecnología para empresas de América Latina. Meta Ads, Google Ads, Tiendanube. Bolivia, Perú, Ecuador, Paraguay.">
+<meta name="twitter:image" content="https://agenciacoira.com/og.png">
+<meta property="og:image" content="https://agenciacoira.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="msvalidate.01" content="350EEE7B91B6CE2B0CB37BBFFE95BAC3">
 <meta name="google-site-verification" content="Qre50Qpv9hAseGoCcxmXblf9SYA2UWfJlgMUAj9wtuo">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -309,6 +314,19 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
 .tech-item:hover span{color:var(--text2);}
 @media(max-width:900px){.tech-strip{padding:48px 24px;}.tech-logos{gap:36px 40px;}}
 @media(max-width:480px){.tech-logos{gap:28px 32px;}}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:8px;transition:background .15s;}
+.nav-burger:hover{background:var(--green-light);}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .2s,opacity .2s;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(248,247,244,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:8px 24px 20px;z-index:99;list-style:none;box-shadow:0 8px 24px rgba(0,0,0,.06);}
+.nav-mobile.open{display:block;}
+.nav-mobile li a{display:block;padding:14px 0;font-size:15px;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:color .15s;}
+.nav-mobile li a:hover{color:var(--green);}
+.nav-mobile li:last-child a{border-bottom:none;background:var(--green);color:#fff;text-align:center;padding:13px 18px;border-radius:10px;margin-top:10px;font-weight:700;display:block;}
+.nav-mobile li:last-child a:hover{background:var(--green-mid);}
+@media(max-width:900px){.nav-burger{display:flex;}}
 </style>
 </head>
 <body>
@@ -335,8 +353,17 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
       <button class="lang-btn" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('pt')">PT</button>
     </div>
+    <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<ul class="nav-mobile" id="nav-mobile">
+  <li><a href="#servicios" data-i18n="nav.servicios" onclick="closeMenu()">Servicios</a></li>
+  <li><a href="#casos" data-i18n="nav.casos" onclick="closeMenu()">Casos</a></li>
+  <li><a href="#mercados" data-i18n="nav.mercados" onclick="closeMenu()">Mercados</a></li>
+  <li><a href="#contacto" onclick="closeMenu()"><span data-i18n="nav.contacto">Hablemos</span></a></li>
+</ul>
 
 <section style="padding:0;background:var(--bg);">
   <div class="hero">
@@ -711,7 +738,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
     </div>
     <span>Agencia Coira</span>
   </a>
-  <span data-i18n="footer.copy">© 2025 Agencia Coira. Todos los derechos reservados.</span>
+  <span data-i18n="footer.copy">© 2026 Agencia Coira. Todos los derechos reservados.</span>
 </footer>
 
 <!-- REEMPLAZÁ 5492612345678 con tu número real (código de país + número sin + ni espacios) -->
@@ -754,7 +781,7 @@ const T = {
     'form.msg':'¿En qué podemos ayudarte?','form.submit':'Enviar mensaje','opt.otro':'Otro',
     'form.err.name':'Por favor ingresá tu nombre.','form.err.email':'Ingresá un email válido.','form.err.msg':'Contanos brevemente tu consulta.',
     'form.success.title':'¡Mensaje recibido!','form.success.desc':'Nos ponemos en contacto a la brevedad.',
-    'footer.copy':'© 2025 Agencia Coira. Todos los derechos reservados.',
+    'footer.copy':'© 2026 Agencia Coira. Todos los derechos reservados.',
     'mercados.grid':'show',
     'sec.sobre.label':'Quiénes somos',
     'sec.sobre.title':'Una consultora chica con experiencia de las grandes.',
@@ -823,7 +850,7 @@ const T = {
     'form.msg':'How can we help you?','form.submit':'Send message','opt.otro':'Other',
     'form.err.name':'Please enter your name.','form.err.email':'Enter a valid email.','form.err.msg':'Briefly tell us your question.',
     'form.success.title':'Message received!','form.success.desc':'We will be in touch shortly.',
-    'footer.copy':'© 2025 Agencia Coira. All rights reserved.',
+    'footer.copy':'© 2026 Agencia Coira. All rights reserved.',
     'mercados.grid':'show',
     'mercados.header':'hide',
     'sec.sobre.label':'Who we are',
@@ -891,7 +918,7 @@ const T = {
     'form.msg':'Como podemos ajudar?','form.submit':'Enviar mensagem','opt.outro':'Outro',
     'form.err.name':'Por favor insira seu nome.','form.err.email':'Insira um email válido.','form.err.msg':'Descreva brevemente sua consulta.',
     'form.success.title':'Mensagem recebida!','form.success.desc':'Entraremos em contato em breve.',
-    'footer.copy':'© 2025 Agência Coira. Todos os direitos reservados.',
+    'footer.copy':'© 2026 Agência Coira. Todos os direitos reservados.',
     'mercados.grid':'show',
     'sec.sobre.label':'Quem somos',
     'sec.sobre.title':'Uma consultora pequena com experiência de agência grande.',
@@ -964,6 +991,25 @@ function setLang(l){
   const waBtn=document.getElementById('wa-btn');
   if(waBtn) waBtn.href=`https://wa.me/${WA_NUM}?text=${WA_MSG[l]||WA_MSG.es}`;
 }
+
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=m.classList.toggle('open');
+  b.classList.toggle('open',open);
+  b.setAttribute('aria-expanded',open);
+}
+function closeMenu(){
+  document.getElementById('nav-mobile').classList.remove('open');
+  const b=document.getElementById('nav-burger');
+  b.classList.remove('open');
+  b.setAttribute('aria-expanded','false');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target))closeMenu();
+});
 
 document.getElementById('contactForm').addEventListener('submit',async function(e){
   e.preventDefault();
