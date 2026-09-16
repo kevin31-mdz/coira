@@ -12,11 +12,24 @@ No somos una agencia de 50 personas con capas de coordinadores. Somos pocos, tra
 
 Para agencias que necesitan manos extra para ejecutar, y para empresas medianas que quieren resultados digitales reales sin armar un equipo desde cero. Si no podemos ayudarte, te lo decimos antes de arrancar.
 
-## Casos
+## Clientes con quienes trabajamos
 
-- **Inka Expediciones** — turismo de aventura. Meta Ads y Google Ads para captar viajeros.
-- **Artecolor Visual** — retail. Optimización de campañas de performance.
-- **Diana Becas Universitarias** — educación. Generación de leads con embudos en Meta Ads.
+- **Il Molise** — restaurante italiano en Buenos Aires. CM, diseño y pauta en Meta y Google Ads.
+- **Corteva Agriscience** — multinacional del agro. Implementación de tracking, GA4 y auditoría de Google Ads.
+- **Revmates** — plataforma de revenue management hotelero. Rediseño web completo.
+- **Bael Iluminación** — auditorías de Google Ads y GA4.
+- **Bunker Cervecería** — gestión de proyecto, pauta, diseño y community management.
+- **Cueva Celta Vinoteca** — CM y pauta en Google Ads.
+- **FA Distribución** — desarrollo de app para gestión de pedidos.
+- **Mundo FW** — pauta en Meta y Google Ads.
+- **Guest Viaje** — implementación de tracking y auditoría GA4 y Google Ads.
+- **Tu Uniformes** — publicidad en Meta y Google Ads.
+- **Changüi** — publicidad en Meta y Google Ads.
+- **Longboat Marine** — diseño web.
+- **Prolegal** — rediseño web para estudio de abogados.
+- **FDN Mecánica** — diseño web.
+- **Nutriking** — pauta en Meta y Google Ads, seguimiento y tracking.
+- **Verde Agua** — publicidad en Google Ads y Meta Ads.
 
 ## Cómo arrancamos
 
