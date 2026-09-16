@@ -298,13 +298,17 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
 @media(max-width:900px){.sobre-layout{grid-template-columns:1fr;gap:32px;}
 .clientes-logos{grid-template-columns:repeat(4,1fr);}}
 @media(max-width:480px){.clientes-logos{grid-template-columns:repeat(3,1fr);}}
-.tech-strip{background:var(--white);border-top:1px solid var(--border);padding:40px 48px;}
+.tech-strip{background:var(--white);border-top:1px solid var(--border);padding:64px 48px;}
 .tech-strip .section-inner{text-align:center;}
-.tech-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:28px;}
-.tech-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px;}
-.tech-logo{height:22px;opacity:.35;filter:grayscale(1);transition:all .25s;cursor:default;}
-.tech-logo:hover{opacity:.9;filter:grayscale(0);}
-@media(max-width:900px){.tech-strip{padding:32px 24px;}.tech-logos{gap:28px;}}
+.tech-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:40px;}
+.tech-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:48px 56px;}
+.tech-item{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.tech-item img{height:32px;opacity:.3;filter:grayscale(1);transition:all .25s;cursor:default;}
+.tech-item:hover img{opacity:1;filter:grayscale(0);}
+.tech-item span{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);transition:color .25s;}
+.tech-item:hover span{color:var(--text2);}
+@media(max-width:900px){.tech-strip{padding:48px 24px;}.tech-logos{gap:36px 40px;}}
+@media(max-width:480px){.tech-logos{gap:28px 32px;}}
 </style>
 </head>
 <body>
@@ -654,18 +658,48 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
 
 <section class="tech-strip">
   <div class="section-inner">
-    <p class="tech-label">Plataformas y herramientas</p>
+    <p class="tech-label">Plataformas y herramientas con las que trabajamos</p>
     <div class="tech-logos">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/meta" alt="Meta Ads" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/googleads" alt="Google Ads" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/googleanalytics" alt="Google Analytics 4" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/googletagmanager" alt="Google Tag Manager" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/shopify" alt="Shopify" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/wordpress" alt="WordPress" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/woocommerce" alt="WooCommerce" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/adobecommerce" alt="Adobe Commerce" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://cdn.simpleicons.org/vtex" alt="Vtex" referrerpolicy="no-referrer">
-      <img class="tech-logo" src="https://app-insti-cdn.nuvemshop.com.br/site/dist/images/Tiendanube.png?v=a7de634" alt="Tiendanube" style="height:18px;" referrerpolicy="no-referrer">
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/meta" alt="Meta Ads" referrerpolicy="no-referrer">
+        <span>Meta Ads</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/googleads" alt="Google Ads" referrerpolicy="no-referrer">
+        <span>Google Ads</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/googleanalytics" alt="Google Analytics 4" referrerpolicy="no-referrer">
+        <span>GA4</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/googletagmanager" alt="Google Tag Manager" referrerpolicy="no-referrer">
+        <span>Tag Manager</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/shopify" alt="Shopify" referrerpolicy="no-referrer">
+        <span>Shopify</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/wordpress" alt="WordPress" referrerpolicy="no-referrer">
+        <span>WordPress</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/woocommerce" alt="WooCommerce" referrerpolicy="no-referrer">
+        <span>WooCommerce</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/magento" alt="Adobe Commerce" referrerpolicy="no-referrer">
+        <span>Adobe Commerce</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.simpleicons.org/vtex" alt="Vtex" referrerpolicy="no-referrer">
+        <span>Vtex</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://app-insti-cdn.nuvemshop.com.br/site/dist/images/Tiendanube.png?v=a7de634" alt="Tiendanube" style="height:22px;" referrerpolicy="no-referrer">
+        <span>Tiendanube</span>
+      </div>
     </div>
   </div>
 </section>
