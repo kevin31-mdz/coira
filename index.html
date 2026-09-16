@@ -453,27 +453,27 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
     <p class="section-sub" data-i18n="sec.casos.sub">Proyectos reales con resultados concretos.</p>
     <div class="casos-grid">
       <div class="caso-card">
-        <div class="caso-rubro">Gastronomía · Buenos Aires</div>
+        <div class="caso-rubro" data-i18n="caso1.rubro">Gastronomía · Buenos Aires</div>
         <h3>Il Molise</h3>
-        <p>Gestión integral de comunicación digital para este restaurante italiano. Community management, diseño de piezas y pauta activa en Meta y Google Ads bajo un mismo proceso coordinado.</p>
+        <p data-i18n="caso1.desc">Gestión integral de comunicación digital para este restaurante italiano. Community management, diseño de piezas y pauta activa en Meta y Google Ads bajo un mismo proceso coordinado.</p>
         <div class="caso-servicios"><span class="cservicio">Meta Ads</span><span class="cservicio">Google Ads</span><span class="cservicio">CM</span><span class="cservicio">Diseño</span></div>
       </div>
       <div class="caso-card">
-        <div class="caso-rubro">Agro · Multinacional</div>
+        <div class="caso-rubro" data-i18n="caso2.rubro">Agro · Multinacional</div>
         <h3>Corteva Agriscience</h3>
-        <p>Implementación de tracking completo, gestión de tags y auditoría de GA4 y Google Ads para la operación latinoamericana de una de las empresas del agro más grandes del mundo.</p>
+        <p data-i18n="caso2.desc">Implementación de tracking completo, gestión de tags y auditoría de GA4 y Google Ads para la operación latinoamericana de una de las empresas del agro más grandes del mundo.</p>
         <div class="caso-servicios"><span class="cservicio">GA4</span><span class="cservicio">Tag Manager</span><span class="cservicio">Google Ads</span><span class="cservicio">Auditoría</span></div>
       </div>
       <div class="caso-card">
-        <div class="caso-rubro">Tecnología · Hotelería</div>
+        <div class="caso-rubro" data-i18n="caso3.rubro">Tecnología · Hotelería</div>
         <h3>Revmates</h3>
-        <p>Rediseño web completo para una plataforma de revenue management hotelero con operaciones en Argentina, Uruguay y Brasil.</p>
+        <p data-i18n="caso3.desc">Rediseño web completo para una plataforma de revenue management hotelero con operaciones en Argentina, Uruguay y Brasil.</p>
         <div class="caso-servicios"><span class="cservicio">Diseño Web</span><span class="cservicio">Desarrollo</span><span class="cservicio">UX</span></div>
       </div>
     </div>
     <div class="clientes-strip">
 
-      <p class="clientes-strip-label">También trabajamos con</p>
+      <p class="clientes-strip-label" data-i18n="clientes.strip.label">También trabajamos con</p>
       <div class="clientes-logos">
         <div class="cliente-item cli-invert">
           <div class="cliente-img-w"><img src="https://www.bael.com.ar/wp-content/uploads/2021/12/logo-footer.png" alt="Bael Iluminación" referrerpolicy="no-referrer"></div>
@@ -512,7 +512,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
           <span class="cliente-cname">Revmates</span>
         </div>
       </div>
-      <p class="clientes-otros">También: <strong>Bunker Cervecería</strong>, <strong>Cueva Celta Vinoteca</strong>, <strong>FA Distribución</strong></p>
+      <p class="clientes-otros" data-i18n-html="clientes.otros">También: <strong>Bunker Cervecería</strong>, <strong>Cueva Celta Vinoteca</strong>, <strong>FA Distribución</strong></p>
     </div>
   </div>
 </section>
@@ -658,7 +658,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
 
 <section class="tech-strip">
   <div class="section-inner">
-    <p class="tech-label">Plataformas y herramientas con las que trabajamos</p>
+    <p class="tech-label" data-i18n="tech.label">Plataformas y herramientas con las que trabajamos</p>
     <div class="tech-logos">
       <div class="tech-item">
         <img src="https://cdn.simpleicons.org/meta" alt="Meta Ads" referrerpolicy="no-referrer">
@@ -780,7 +780,16 @@ const T = {
     'faq7.q':'¿Gestionan redes sociales?',
     'faq7.a':'Sí, hacemos community management para marcas que quieren presencia activa en Instagram y Facebook. Calendario de contenido, producción de piezas y gestión de la comunidad. Lo integramos con la pauta para que la comunicación orgánica y paga vayan en la misma dirección.',
     'faq8.q':'¿Qué es la gestión de proyectos digitales?',
-    'faq8.a':'Coordinamos el trabajo entre distintos equipos — diseño, desarrollo, publicidad, contenido — para que un proyecto llegue a tiempo y dentro del presupuesto. Usamos metodologías ágiles adaptadas al marketing: sprints cortos, prioridades claras y reportes frecuentes sin burocracia.'
+    'faq8.a':'Coordinamos el trabajo entre distintos equipos — diseño, desarrollo, publicidad, contenido — para que un proyecto llegue a tiempo y dentro del presupuesto. Usamos metodologías ágiles adaptadas al marketing: sprints cortos, prioridades claras y reportes frecuentes sin burocracia.',
+    'caso1.rubro':'Gastronomía · Buenos Aires',
+    'caso1.desc':'Gestión integral de comunicación digital para este restaurante italiano. Community management, diseño de piezas y pauta activa en Meta y Google Ads bajo un mismo proceso coordinado.',
+    'caso2.rubro':'Agro · Multinacional',
+    'caso2.desc':'Implementación de tracking completo, gestión de tags y auditoría de GA4 y Google Ads para la operación latinoamericana de una de las empresas del agro más grandes del mundo.',
+    'caso3.rubro':'Tecnología · Hotelería',
+    'caso3.desc':'Rediseño web completo para una plataforma de revenue management hotelero con operaciones en Argentina, Uruguay y Brasil.',
+    'clientes.strip.label':'También trabajamos con',
+    'clientes.otros':'También: <strong>Bunker Cervecería</strong>, <strong>Cueva Celta Vinoteca</strong>, <strong>FA Distribución</strong>',
+    'tech.label':'Plataformas y herramientas con las que trabajamos'
   },
   en:{
     'nav.servicios':'Services','nav.casos':'Cases','nav.mercados':'Markets','nav.contacto':"Let's talk",
@@ -816,7 +825,40 @@ const T = {
     'form.success.title':'Message received!','form.success.desc':'We will be in touch shortly.',
     'footer.copy':'© 2025 Agencia Coira. All rights reserved.',
     'mercados.grid':'show',
-    'mercados.header':'hide'
+    'mercados.header':'hide',
+    'sec.sobre.label':'Who we are',
+    'sec.sobre.title':'A small consultancy with big agency experience.',
+    'sec.sobre.p1':'We started running campaigns and projects for clients in Argentina and abroad. Over time, what we did separately — advertising, technology, management — started working better when integrated under a single process.',
+    'sec.sobre.p2':'Today we work with agencies that need execution capacity, and with companies that want real results without paying for a large agency structure. No unnecessary meetings, no commitments that don\'t make sense from day one.',
+    'v1.title':'Straight to the point','v1.desc':'Honest diagnosis from the start. If we can\'t help you, we say so before we begin.',
+    'v2.title':'We execute, not just advise','v2.desc':'We take ownership of the work. We don\'t deliver presentations and disappear.',
+    'v3.title':'We measure everything','v3.desc':'Every action has a metric. If something isn\'t working, we adjust — no excuses.',
+    'sec.faq.label':'FAQ','sec.faq.title':'Questions we get often.',
+    'faq1.q':'What kind of companies do you work with?',
+    'faq1.a':'With marketing agencies that need extra execution capacity, and mid-sized companies that want digital results without building an in-house team from scratch. We work with clients across Argentina and the region — Bolivia, Peru, Ecuador, Paraguay and beyond.',
+    'faq2.q':'How do we start a project?',
+    'faq2.a':'With a free diagnosis call. We understand the business, budget and real goals. From there we put together a concrete proposal — not a 40-page document, but a clear action plan with dates and deliverables.',
+    'faq3.q':'Do you manage advertising budgets?',
+    'faq3.a':'Yes, we manage it directly. The media budget always stays in the client\'s hands — we charge for management, not a percentage of spend. We\'re also partners with media agencies, so depending on what the client needs, we can work in different ways.',
+    'faq4.q':'How long does it take to see results?',
+    'faq4.a':'It depends on the channel and goal. With paid advertising (Meta or Google), the first useful data appears within 2 to 4 weeks. With organic or ecommerce strategies, the timeline is longer. We always clarify this upfront so there are no surprises.',
+    'faq5.q':'How do I know if my site is tracking correctly?',
+    'faq5.a':'With a tracking audit. We check whether GA4 and Google Ads are properly implemented, whether key events — purchases, forms, calls — are being recorded, and whether the data you see is reliable. It\'s a one-time service many clients request before scaling their ad spend.',
+    'faq6.q':'Do you build websites or only redesign them?',
+    'faq6.a':'Both. We do design and development from scratch, and we also redesign existing sites. We work with WordPress, Tiendanube, WooCommerce, Shopify, Adobe Commerce and Vtex. We always start with a diagnosis of the current site or the goals for the new one, then define the best platform and structure.',
+    'faq7.q':'Do you manage social media?',
+    'faq7.a':'Yes, we do community management for brands that want an active presence on Instagram and Facebook. Content calendar, creative production and community management — integrated with paid advertising so organic and paid communication go in the same direction.',
+    'faq8.q':'What is digital project management?',
+    'faq8.a':'We coordinate work across different teams — design, development, advertising, content — so a project is delivered on time and within budget. We use agile methodologies adapted to marketing: short sprints, clear priorities and frequent reports without bureaucracy.',
+    'caso1.rubro':'Gastronomy · Buenos Aires',
+    'caso1.desc':'Full digital communication management for this Italian restaurant. Community management, creative production and active campaigns on Meta and Google Ads under a single coordinated process.',
+    'caso2.rubro':'Agro · Multinational',
+    'caso2.desc':'Full tracking implementation, tag management and GA4 and Google Ads audit for the Latin American operation of one of the world\'s largest agro companies.',
+    'caso3.rubro':'Technology · Hospitality',
+    'caso3.desc':'Full website redesign for a hotel revenue management platform operating in Argentina, Uruguay and Brazil.',
+    'clientes.strip.label':'We also work with',
+    'clientes.otros':'Also: <strong>Bunker Cervecería</strong>, <strong>Cueva Celta Vinoteca</strong>, <strong>FA Distribución</strong>',
+    'tech.label':'Platforms and tools we work with'
   },
   pt:{
     'nav.servicios':'Serviços','nav.casos':'Casos','nav.mercados':'Mercados','nav.contacto':'Vamos conversar',
@@ -850,7 +892,40 @@ const T = {
     'form.err.name':'Por favor insira seu nome.','form.err.email':'Insira um email válido.','form.err.msg':'Descreva brevemente sua consulta.',
     'form.success.title':'Mensagem recebida!','form.success.desc':'Entraremos em contato em breve.',
     'footer.copy':'© 2025 Agência Coira. Todos os direitos reservados.',
-    'mercados.grid':'show'
+    'mercados.grid':'show',
+    'sec.sobre.label':'Quem somos',
+    'sec.sobre.title':'Uma consultora pequena com experiência de agência grande.',
+    'sec.sobre.p1':'Começamos fazendo campanhas e projetos para clientes na Argentina e no exterior. Com o tempo, o que fazíamos separadamente — publicidade, tecnologia, gestão — passou a funcionar melhor integrado sob um único processo.',
+    'sec.sobre.p2':'Hoje trabalhamos com agências que precisam de capacidade de execução, e com empresas que querem resultados reais sem pagar estrutura de agência grande. Sem reuniões desnecessárias, sem compromissos que não fazem sentido desde o primeiro dia.',
+    'v1.title':'Direto ao ponto','v1.desc':'Diagnóstico honesto desde o início. Se não pudermos ajudar, dizemos antes de começar.',
+    'v2.title':'Executamos, não só aconselhamos','v2.desc':'Nos responsabilizamos pelo trabalho. Não entregamos apresentações e sumimos.',
+    'v3.title':'Medimos tudo','v3.desc':'Cada ação tem uma métrica. Se algo não funciona, ajustamos — sem desculpas.',
+    'sec.faq.label':'Perguntas frequentes','sec.faq.title':'O que nos perguntam com frequência.',
+    'faq1.q':'Com que tipo de empresas vocês trabalham?',
+    'faq1.a':'Com agências de marketing que precisam de capacidade de execução extra, e com empresas médias que querem resultados digitais sem montar uma equipe interna do zero. Temos clientes na Argentina e em toda a região — Bolívia, Peru, Equador, Paraguai e mais.',
+    'faq2.q':'Como começamos um projeto?',
+    'faq2.a':'Com uma chamada de diagnóstico sem custo. Entendemos o negócio, o orçamento e os objetivos reais. A partir daí montamos uma proposta concreta — não um documento de 40 páginas, mas um plano de ação claro com datas e entregáveis.',
+    'faq3.q':'Vocês gerenciam o orçamento de publicidade?',
+    'faq3.a':'Sim, gerenciamos diretamente. O orçamento de mídia fica sempre nas mãos do cliente — cobramos pela gestão, não por uma porcentagem do investimento. Também somos parceiros de agências de mídia, então dependendo do que o cliente precisar, podemos trabalhar de formas diferentes.',
+    'faq4.q':'Quanto tempo leva para ver resultados?',
+    'faq4.a':'Depende do canal e do objetivo. Com publicidade paga (Meta ou Google) os primeiros dados úteis aparecem em 2 a 4 semanas. Com estratégias orgânicas ou de ecommerce, o horizonte é mais longo. Sempre esclarecemos antes de começar para não ter surpresas.',
+    'faq5.q':'Como sei se meu site está medindo corretamente?',
+    'faq5.a':'Com uma auditoria de tracking. Verificamos se o GA4 e o Google Ads estão bem implementados, se os eventos-chave — compras, formulários, ligações — estão sendo registrados, e se os dados que você vê são confiáveis. É um serviço pontual que muitos clientes pedem antes de escalar o investimento em publicidade.',
+    'faq6.q':'Vocês criam sites ou apenas redesenham?',
+    'faq6.a':'As duas coisas. Fazemos design e desenvolvimento do zero, e também redesenhamos sites existentes. Trabalhamos com WordPress, Tiendanube, WooCommerce, Shopify, Adobe Commerce e Vtex. Sempre começamos com um diagnóstico do site atual ou dos objetivos do novo, e a partir daí definimos a plataforma e estrutura mais adequadas.',
+    'faq7.q':'Vocês gerenciam redes sociais?',
+    'faq7.a':'Sim, fazemos community management para marcas que querem presença ativa no Instagram e Facebook. Calendário de conteúdo, produção de peças e gestão da comunidade — integrado com a publicidade paga para que a comunicação orgânica e paga sigam a mesma direção.',
+    'faq8.q':'O que é gestão de projetos digitais?',
+    'faq8.a':'Coordenamos o trabalho entre diferentes equipes — design, desenvolvimento, publicidade, conteúdo — para que um projeto seja entregue no prazo e dentro do orçamento. Usamos metodologias ágeis adaptadas ao marketing: sprints curtos, prioridades claras e relatórios frequentes sem burocracia.',
+    'caso1.rubro':'Gastronomia · Buenos Aires',
+    'caso1.desc':'Gestão integral de comunicação digital para este restaurante italiano. Community management, produção de peças e campanhas ativas no Meta e Google Ads sob um mesmo processo coordenado.',
+    'caso2.rubro':'Agro · Multinacional',
+    'caso2.desc':'Implementação completa de tracking, gestão de tags e auditoria de GA4 e Google Ads para a operação latino-americana de uma das maiores empresas do agro mundial.',
+    'caso3.rubro':'Tecnologia · Hotelaria',
+    'caso3.desc':'Redesenho completo do site para uma plataforma de revenue management hoteleiro com operações na Argentina, Uruguai e Brasil.',
+    'clientes.strip.label':'Também trabalhamos com',
+    'clientes.otros':'Também: <strong>Bunker Cervecería</strong>, <strong>Cueva Celta Vinoteca</strong>, <strong>FA Distribución</strong>',
+    'tech.label':'Plataformas e ferramentas com as quais trabalhamos'
   }
 };
 
