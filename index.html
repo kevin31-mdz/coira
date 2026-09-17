@@ -42,6 +42,7 @@
     "address": {"@type": "PostalAddress", "addressCountry": "AR"},
     "areaServed": [
       {"@type": "Country", "name": "Argentina"},
+      {"@type": "Country", "name": "Brazil"},
       {"@type": "Country", "name": "Bolivia"},
       {"@type": "Country", "name": "Peru"},
       {"@type": "Country", "name": "Ecuador"},
@@ -62,7 +63,7 @@
       "@type": "ContactPoint",
       "telephone": "+5491149366618",
       "contactType": "customer service",
-      "areaServed": ["AR", "BO", "PE", "EC", "PY"],
+      "areaServed": ["AR", "BR", "BO", "PE", "EC", "PY"],
       "availableLanguage": ["Spanish", "English", "Portuguese"]
     }
   },
@@ -205,7 +206,7 @@ section{padding:80px 48px;}
 .cservicio{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:var(--green-light);color:var(--green);}
 
 .mercados{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.mercados-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+.mercados-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
 .mercado-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;text-align:center;transition:all .2s;}
 .mercado-card:hover{border-color:var(--green);background:var(--green-light);}
 .mercado-flag{font-size:32px;margin-bottom:10px;}
@@ -411,7 +412,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
         <div class="hf-icon">🌎</div>
         <div>
           <div class="hf-label" data-i18n="hero.float.label">Mercados activos</div>
-          <div class="hf-value">BO · PE · EC · PY</div>
+          <div class="hf-value">AR · BR · BO · PE · EC · PY</div>
         </div>
       </div>
     </div>
@@ -556,6 +557,8 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:32px 48px;displ
     <p class="section-sub" data-i18n="sec.mercados.sub">Mercados con oportunidad real y ecosistemas digitales en crecimiento.</p>
     </div>
     <div class="mercados-grid" id="mercados-grid">
+      <div class="mercado-card"><div class="mercado-flag">🇦🇷</div><h4>Argentina</h4><p data-i18n="m.arg">Mercado local y base de operaciones</p></div>
+      <div class="mercado-card"><div class="mercado-flag">🇧🇷</div><h4>Brasil</h4><p data-i18n="m.bra">Mayor mercado digital de LATAM</p></div>
       <div class="mercado-card"><div class="mercado-flag">🇧🇴</div><h4>Bolivia</h4><p data-i18n="m.eco">Ecommerce en desarrollo</p></div>
       <div class="mercado-card"><div class="mercado-flag">🇵🇪</div><h4>Perú</h4><p data-i18n="m.dig">Digital en expansión</p></div>
       <div class="mercado-card"><div class="mercado-flag">🇪🇨</div><h4>Ecuador</h4><p data-i18n="m.mkt">Marketing en crecimiento</p></div>
@@ -774,13 +777,14 @@ const T = {
     'caso2.rubro':'Comercio · Retail','caso2.desc':'Consultoría y gestión de campañas de performance en Meta y Google Ads. Optimización de inversión publicitaria y estrategia de captación de clientes.',
     'caso3.rubro':'Educación · Captación','caso3.desc':'Campañas de generación de leads para becas universitarias. Embudos de conversión en Meta Ads con segmentación avanzada por perfil de estudiante.',
     'sec.mercados.label':'Dónde operamos','sec.mercados.title':'Foco en Latinoamérica.','sec.mercados.sub':'Mercados con oportunidad real y ecosistemas digitales en crecimiento.',
+    'm.arg':'Mercado local y base de operaciones','m.bra':'Mayor mercado digital de LATAM',
     'm.eco':'Ecommerce en desarrollo','m.dig':'Digital en expansión','m.mkt':'Marketing en crecimiento','m.tech':'Tech y comercio digital',
     'sec.proceso.label':'Cómo trabajamos','sec.proceso.title':'Simple y directo.',
     'p1.title':'Diagnóstico','p1.desc':'Entendemos el negocio, los objetivos y el estado actual antes de proponer cualquier cosa.',
     'p2.title':'Propuesta concreta','p2.desc':'Plan de trabajo claro, sin lenguaje de agencia. Qué hacemos, cuándo, y qué se mide.',
     'p3.title':'Ejecución y seguimiento','p3.desc':'Ejecutamos y reportamos. Comunicación directa, sin burocracia ni capas intermedias.',
     'sec.contacto.label':'Contacto','sec.contacto.title':'¿Trabajamos juntos?','sec.contacto.sub':'Contanos sobre tu proyecto y encontramos la mejor forma de ayudarte.',
-    'contact.loc':'Argentina · Bolivia · Perú · Ecuador · Paraguay','contact.lang':'Español · Inglés · Português',
+    'contact.loc':'Argentina · Brasil · Bolivia · Perú · Ecuador · Paraguay','contact.lang':'Español · Inglés · Português',
     'form.name':'Nombre','form.email':'Email','form.pais':'País','form.pais.ph':'Seleccioná tu país',
     'form.msg':'¿En qué podemos ayudarte?','form.submit':'Enviar mensaje','opt.otro':'Otro',
     'form.err.name':'Por favor ingresá tu nombre.','form.err.email':'Ingresá un email válido.','form.err.msg':'Contanos brevemente tu consulta.',
@@ -843,13 +847,14 @@ const T = {
     'caso2.rubro':'Commerce · Retail','caso2.desc':'Consulting and performance campaign management on Meta and Google Ads. Ad spend optimization and customer acquisition strategy.',
     'caso3.rubro':'Education · Lead generation','caso3.desc':'Lead generation campaigns for university scholarships. Conversion funnels on Meta Ads with advanced student profile segmentation.',
     'sec.mercados.label':'Where we operate','sec.mercados.title':'Latin America focus.','sec.mercados.sub':'We work with companies across the region — wherever the opportunity is.',
+    'm.arg':'Home base & local market','m.bra':'Largest digital market in LATAM',
     'm.eco':'','m.dig':'','m.mkt':'','m.tech':'',
     'sec.proceso.label':'How we work','sec.proceso.title':'Simple and direct.',
     'p1.title':'Diagnosis','p1.desc':'We understand the business, goals and current state before proposing anything.',
     'p2.title':'Concrete proposal','p2.desc':'Clear work plan, no agency speak. What we do, when, and what gets measured.',
     'p3.title':'Execution & follow-up','p3.desc':'We execute and report. Direct communication, no bureaucracy or middlemen.',
     'sec.contacto.label':'Contact','sec.contacto.title':'Ready to grow together?','sec.contacto.sub':"Tell us about your project and we'll find the best way to help.",
-    'contact.loc':'Argentina · Bolivia · Peru · Ecuador · Paraguay','contact.lang':'Spanish · English · Portuguese',
+    'contact.loc':'Argentina · Brazil · Bolivia · Peru · Ecuador · Paraguay','contact.lang':'Spanish · English · Portuguese',
     'form.name':'Name','form.email':'Email','form.pais':'Country','form.pais.ph':'Select your country',
     'form.msg':'How can we help you?','form.submit':'Send message','opt.otro':'Other',
     'form.err.name':'Please enter your name.','form.err.email':'Enter a valid email.','form.err.msg':'Briefly tell us your question.',
@@ -911,6 +916,7 @@ const T = {
     'caso2.rubro':'Comércio · Varejo','caso2.desc':'Consultoria e gestão de campanhas de performance no Meta e Google Ads. Otimização de investimento em publicidade e estratégia de captação de clientes.',
     'caso3.rubro':'Educação · Captação','caso3.desc':'Campanhas de geração de leads para bolsas universitárias. Funis de conversão no Meta Ads com segmentação avançada por perfil de estudante.',
     'sec.mercados.label':'Onde atuamos','sec.mercados.title':'Foco na América Latina.','sec.mercados.sub':'Trabalhamos com empresas em toda a região — onde estiver a oportunidade.',
+    'm.arg':'Base de operações e mercado local','m.bra':'Maior mercado digital da América Latina',
     'm.eco':'Ecommerce em desenvolvimento','m.dig':'Digital em expansão','m.mkt':'Marketing em crescimento','m.tech':'Tech e comércio digital',
     'sec.proceso.label':'Como trabalhamos','sec.proceso.title':'Simples e direto.',
     'p1.title':'Diagnóstico','p1.desc':'Entendemos o negócio, os objetivos e o estado atual antes de propor qualquer coisa.',
